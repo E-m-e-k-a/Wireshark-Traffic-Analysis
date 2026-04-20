@@ -110,11 +110,62 @@ Network traffic analysis exercises demonstrating practical understanding of TCP/
 - Network forensics fundamentals
 
 ---
+---
 
+### Session 2: HTTP Traffic Analysis
+
+**Date:** April 20, 2026
+
+**Objective:** Analyze HTTP request and response cycle to understand web traffic communication
+
+**Methodology:**
+
+1. **Traffic Generation**
+   - Used `curl http://example.com` to generate HTTP request
+   - Single HTTP transaction for clean analysis
+
+2. **Packet Capture**
+   - Interface: eth1 (internet-connected adapter)
+   - Filter: `http` (display HTTP packets only)
+   - Result: Captured HTTP request/response packets
+
+3. **Analysis**
+   - Examined HTTP GET request structure
+   - Analyzed HTTP 200 OK response
+   - Identified request/response headers
+
+**Key Findings:**
+
+**HTTP Request (GET):**
+- Method: GET
+- Host: example.com
+- User-Agent: curl/8.14.1
+- Purpose: Client requests webpage from server
+
+**HTTP Response (200 OK):**
+- Status Code: 200 (Success)
+- Content-Type: text/html
+- Purpose: Server delivers requested webpage
+
+**Complete Communication Flow:**
+1. TCP Three-Way Handshake (Session 1 concept)
+2. HTTP GET Request → Client asks for resource
+3. HTTP 200 OK Response → Server delivers resource
+4. TCP Connection Termination
+
+**Security Relevance:**
+- HTTP traffic is unencrypted (visible in plaintext)
+- Can see exactly what's being requested and sent
+- Useful for detecting data exfiltration
+- Identifying malicious web requests (C2 communication)
+- Analyzing suspicious user activity
+
+
+
+---
 ## 📈 Next Steps
 
 **Planned Sessions:**
-- Session 2: HTTP traffic analysis
 - Session 3: Advanced filtering techniques
 - Session 4: Suspicious traffic identification
 - Session 5: Network forensics case study

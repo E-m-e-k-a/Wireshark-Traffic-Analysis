@@ -1,3 +1,5 @@
+Part of my SOC Analyst portfolio (https://github.com/E-m-e-k-a/SOC-Analyst-Portfolio)
+
 # Wireshark Traffic Analysis
 
 ## 📊 Project Overview
